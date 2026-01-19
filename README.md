@@ -1,85 +1,176 @@
-# Model Breach
+🔐 Model Breach
+Adversarial Testing Arena for Large Language Models (LLMs)
 
-**Adversarial Testing Arena for LLMs**
+Model Breach is a security challenge platform designed to evaluate the robustness of Large Language Models against adversarial attacks such as prompt injection, jailbreaks, and secret extraction.
 
-Model Breach is a security challenge platform designed to test the robustness of AI systems against adversarial attacks. Users compete to "jailbreak" advanced AI agents in non-replayable, deterministic scenarios to extract secrets and bypass security controls.
+Users compete in a controlled arena to bypass AI safeguards under deterministic, non-replayable conditions, simulating real-world AI security threats.
 
-## 🏗️ Architecture
+🚀 Key Features
 
-The project consists of three main components:
+Adversarial Testing Arena
+Compete to exploit AI agents by bypassing security constraints using crafted prompts.
 
-- **Frontend**: A modern React application built with Vite and TailwindCSS, providing the user interface for the arena and challenges.
-- **Backend**: A Node.js/Express (TypeScript) server that manages game state and communicates with the database.
-- **Engine**: A Python/FastAPI service responsible for generating deterministic challenges and managing the AI logic.
+Deterministic Challenge Engine
+Each challenge is generated deterministically to prevent replay attacks and solution leakage.
 
-## 🛠️ Prerequisites
+Multi-Service Architecture
+Clear separation between frontend, backend, and AI logic for scalability and security.
 
-Ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (v18+)
-- [Python](https://www.python.org/) (v3.10+)
-- [PostgreSQL](https://www.postgresql.org/)
+Real-World Attack Simulation
+Includes prompt injection, instruction override, controlled data leakage, and secret extraction scenarios.
 
-## 🚀 Setup & Installation
+🏗️ System Architecture
+Frontend (React + TailwindCSS)
+        ↓
+Backend API (Node.js + TypeScript + Express)
+        ↓
+AI Engine (Python + FastAPI)
+        ↓
+PostgreSQL Database
 
-### 1. Engine (Python)
+Components
+🎨 Frontend
 
-The engine handles the core logic for challenge generation.
+Built with React (Vite) and TailwindCSS
 
-```bash
+Provides the interactive arena UI
+
+Real-time interaction with AI challenges
+
+🧠 Backend
+
+Node.js + Express (TypeScript)
+
+Manages users, sessions, and challenge state
+
+Handles secure API communication with the engine
+
+Persists results using PostgreSQL
+
+⚙️ Engine
+
+Python + FastAPI
+
+Generates deterministic challenges
+
+Manages AI behavior and security constraints
+
+Prevents replay-based exploitation
+
+🛠️ Tech Stack
+
+Frontend
+
+React
+
+Vite
+
+TailwindCSS
+
+Backend
+
+Node.js
+
+Express
+
+TypeScript
+
+PostgreSQL
+
+AI Engine
+
+Python
+
+FastAPI
+
+📦 Prerequisites
+
+Make sure you have the following installed:
+
+Node.js (v18+)
+
+Python (v3.10+)
+
+PostgreSQL
+
+⚙️ Setup & Installation
+1️⃣ Engine (Python)
 cd engine
 python -m venv venv
+
 # Windows
 .\venv\Scripts\activate
-# Linux/Mac
-# source venv/bin/activate
+
+# macOS / Linux
+source venv/bin/activate
 
 pip install -r requirements.txt
 python main.py
-```
-The engine runs on `http://localhost:8000`.
 
-### 2. Backend (Node.js)
 
-The backend manages the API and database connections.
+Engine runs at:
+👉 http://localhost:8000
 
-```bash
+2️⃣ Backend (Node.js)
 cd backend
 npm install
 
-# Setup Environment Variables
+
+Create environment variables:
+
 cp .env.example .env
-# Edit .env and configure your PostgreSQL connection details
-```
 
-Run database migrations:
-```bash
+
+Configure PostgreSQL credentials in .env, then run:
+
 npm run migrate
-```
-
-Start the backend server:
-```bash
 npm run dev
-```
-The backend runs on `http://localhost:3000`.
 
-### 3. Frontend (React)
 
-The frontend provides the player interface.
+Backend runs at:
+👉 http://localhost:3000
 
-```bash
+3️⃣ Frontend (React)
 cd frontend
 npm install
 npm run dev
-```
-The frontend runs on `http://localhost:5173`.
 
-## 🎮 Usage
 
-1. Start all three services (Engine, Backend, Frontend).
-2. Open your browser and navigate to `http://localhost:5173`.
-3. Click "Enter Arena" to start the challenges.
-4. Attempt to bypass the AI protections using prompt injection, SQL leak techniques, and more.
+Frontend runs at:
+👉 http://localhost:5173
 
-## 📝 License
+🎮 Usage
 
-ISC
+Start Engine, Backend, and Frontend
+
+Open http://localhost:5173
+
+Click Enter Arena
+
+Attempt to bypass AI protections using adversarial prompts
+
+Observe model behavior under constrained security rules
+
+🎯 Learning Objectives
+
+Understand real-world LLM security vulnerabilities
+
+Explore prompt injection and jailbreak techniques
+
+Learn how deterministic systems prevent replay attacks
+
+Practice secure AI system design
+
+📌 Future Improvements
+
+Leaderboard & scoring system
+
+Additional adversarial scenarios
+
+Defense-side evaluation metrics
+
+Multi-model support
+
+📄 License
+
+ISC License
